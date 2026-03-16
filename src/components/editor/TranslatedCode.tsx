@@ -37,7 +37,7 @@ export function TranslatedCode({ jsCode, cacheKey }: TranslatedCodeProps) {
       if (!cancelled) { setLoading(false); setFailed(true); attemptedRef.current.add(fullKey); }
     }, 15000);
 
-    fetch("https://api.anthropic.com/v1/messages", {
+    fetch("/api/translate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
